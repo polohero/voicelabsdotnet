@@ -8,11 +8,13 @@ You need to add a reference to VoiceLabs.Client to use.
 Below is the sample from VoiceLabs.Test with the unit tests.
 
 A couple notes:
-1. I recommend wrapping a try/catch around it. You wouldn't want you skill/action to bomb out because analytics failed.
+1. Remember to ignore Google Actions Health checks. That is not built into the client. https://developers.google.com/actions/console/actions-health-check
 
-2. I recommend doing the call Async vs Sync. I did not build out an async so you'd have to do that yourself, or modify the git.
+2. I recommend wrapping a try/catch around it. You wouldn't want you skill/action to bomb out because analytics failed.
 
-3. The MetaData I've left as a Dictionary, so if you try to add duplicate keys (name) you'll get an error. I don't know if it should be or not based on VoiceLabs actual API, but it's never been a problem for me. 
+3. I recommend doing the call Async vs Sync. I did not build out an async so you'd have to do that yourself, or modify the git.
+
+4. The MetaData I've left as a Dictionary, so if you try to add duplicate keys (name) you'll get an error. I don't know if it should be or not based on VoiceLabs actual API, but it's never been a problem for me. 
 
         [TestMethod]
         public void Test_SendAlexa()
