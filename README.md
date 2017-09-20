@@ -7,6 +7,13 @@ You need to add a reference to VoiceLabs.Client to use.
 
 Below is the sample from VoiceLabs.Test with the unit tests.
 
+A couple notes:
+1. I recommend wrapping a try/catch around it. You wouldn't want you skill/action to bomb out because analytics failed.
+
+2. I recommend doing the call Async vs Sync. I did not build out an async so you'd have to do that yourself, or modify the git.
+
+3. The MetaData I've left as a Dictionary, so if you try to add duplicate keys (name) you'll get an error. I don't know if it should be or not based on VoiceLabs actual API, but it's never been a problem for me. 
+
         [TestMethod]
         public void Test_SendAlexa()
         {
